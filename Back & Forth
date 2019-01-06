@@ -1,0 +1,22 @@
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Importchrome {
+
+	public static void main(String[] args) {
+	
+	System.setProperty("webdriver.chrome.driver",
+			"C:\\JAVA Training\\Selenium Training\\chromedriver_win32\\chromedriver.exe");
+	WebDriver testit=new ChromeDriver();
+	testit.get("https://cricbuzz.com");
+	System.out.println(testit.getTitle());     //validates if your Page title is correct
+	System.out.println(testit.getCurrentUrl());//validates if you landed in the correct url and prints it
+	//System.out.println(testit.getPageSource());//prints page source from web browser
+	//testit.get("https://lloyds.com");
+	//testit.navigate().back();
+	//testit.close(); // closes current page
+	testit.get("https://google.com");
+	testit.quit(); //closes the browser including all pages openeed
+			
+	}
+}
