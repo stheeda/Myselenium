@@ -1,0 +1,24 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class Static_Dropdown {
+
+	public static void main(String[] args) {
+		
+		System.setProperty("webdriver.gecko.driver",
+				"C:\\JAVA Training\\Selenium Training\\geckodriver-v0.23.0-win64\\geckodriver.exe");
+		WebDriver myautomation = new FirefoxDriver();
+		myautomation.get("http://www.qaclickacademy.com/practice.php");
+		/*Select S = 	new Select(myautomation.findElement(By.id("dropdown-class-example")));
+		S.selectByValue("option1");
+		S.selectByIndex(2);
+		S.selectByVisibleText("Option3");*/
+		System.out.println(myautomation.findElements(By.cssSelector("input[type='checkbox']")).size());
+		System.out.println(myautomation.findElement(By.xpath("//input[@value='option1']")).isSelected());
+		myautomation.findElement(By.xpath("//input[@value='option1']")).click();
+		System.out.println(myautomation.findElement(By.xpath("//input[@value='option1']")).isSelected());
+		myautomation.findElement(By.xpath("//input[@value='option1']")).click();
+		
+	}
