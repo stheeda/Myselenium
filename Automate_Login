@@ -1,0 +1,20 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class Automate_Logins {
+
+	public static void main(String[] args) {
+		
+		System.setProperty("webdriver.gecko.driver",
+				"C:\\JAVA Training\\Selenium Training\\geckodriver-v0.23.0-win64\\geckodriver.exe");
+		WebDriver myautomation = new FirefoxDriver();
+		myautomation.get("https://facebook.com");
+		System.out.println(myautomation.getTitle());
+		myautomation.findElement(By.id("email")).sendKeys("sasank.theeda@gmail.com");
+		myautomation.findElement(By.name("pass")).sendKeys("schistosomawfc");
+		myautomation.findElement(By.linkText("Forgotten account?")).click(); /*always look for anchor "a" for link text*/
+		myautomation.close();	
+	}
+
+}
