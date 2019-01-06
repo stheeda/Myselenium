@@ -1,0 +1,64 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.Assert;
+
+public class StaticDropdown_Checkboxes {
+
+	public static void main(String[] args) throws InterruptedException {
+
+		System.setProperty("webdriver.gecko.driver",
+				"C:\\JAVA Training\\Selenium Training\\geckodriver-v0.23.0-win64\\geckodriver.exe");
+		WebDriver myautomation = new FirefoxDriver();
+		myautomation.get("https://www.spicejet.com/");
+		/*
+		myautomation.findElement(By.id("divpaxinfo")).click();
+		Thread.sleep(3000L);
+		System.out.println(myautomation.findElement(By.id("divpaxinfo")).getText());// Print the number of adults prior
+																					// selecting
+
+		for (int i = 1; i < 5; i++) {
+			myautomation.findElement(By.id("hrefIncAdt")).click();
+		}
+
+		myautomation.findElement(By.id("btnclosepaxoption")).click(); // click the Done button
+
+		System.out.println(myautomation.findElement(By.id("divpaxinfo")).getText()); // Print the number of adults after selecting
+		
+		WebElement Senior_Checkbox = myautomation.findElement(By.id("ctl00_mainContent_chk_SeniorCitizenDiscount"));
+		System.out.println (Senior_Checkbox.isSelected());
+		Senior_Checkbox.click();
+		System.out.println (Senior_Checkbox.isSelected());
+		System.out.println(myautomation.findElement(By.xpath("input[type='checkbox']")).getSize());
+		*/
+		System.out.println(myautomation.findElement(By.name("ctl00$mainContent$view_date2")).isEnabled());
+
+		System.out.println(myautomation.findElement(By.id("Div1")).getAttribute("style"));
+
+		myautomation.findElement(By.id("ctl00_mainContent_rbtnl_Trip_1")).click();
+
+		System.out.println(myautomation.findElement(By.id("Div1")).getAttribute("style"));
+
+		if(myautomation.findElement(By.id("Div1")).getAttribute("style").contains("1"))
+
+		{
+
+		System.out.println("its enabled");
+
+		Assert.assertTrue(true);
+
+		}
+
+		else
+
+		{
+
+		Assert.assertTrue(true);
+
+		}
+
+
+		myautomation.close();
+	}
+}
