@@ -1,0 +1,28 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Importchrome2 {
+
+	public static void main(String[] args) {
+	
+	System.setProperty("webdriver.chrome.driver",
+			"C:\\JAVA Training\\Selenium Training\\chromedriver_win32\\chromedriver.exe");
+	WebDriver driver=new ChromeDriver();
+	driver.get("https://fab.com/");
+
+    System.out.println(driver.getTitle());
+
+// Subscription Popup handling
+
+        driver.findElement(By.xpath("(//input[@type='text'])[3]")).click();
+
+        driver.findElement(By.xpath("(//input[@type='text'])[3]")).sendKeys("info@vectramind.com");
+
+        //driver.findElement(By.xpath("//button[contains(text(),'Subscribe')]")).click();
+        driver.findElement(By.xpath("//button[contains(text(),'Subscribe')]")).click();
+        
+        //tagName[contains(@attribute,'value')]
+      //tagName[@attribute='value']  - xpath syntax
+
+}
