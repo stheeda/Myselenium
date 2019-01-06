@@ -1,0 +1,21 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class DynamicDropdown_API {
+
+	public static void main(String[] args) throws InterruptedException {
+	
+		System.setProperty("webdriver.gecko.driver","C:\\JAVA Training\\Selenium Training\\geckodriver-v0.23.0-win64\\geckodriver.exe");
+		WebDriver myautomation = new FirefoxDriver();
+		myautomation.get("https://www.spicejet.com/");
+		myautomation.findElement(By.id("ctl00_mainContent_ddl_originStation1_CTXT")).click();
+		myautomation.findElement(By.xpath("//a[@text='Leh (IXL)']")).click();
+		Thread.sleep(2000L);
+		myautomation.findElement(By.xpath("(//a[@text='Hyderabad (HYD)'])[2]")).click();
+		Thread.sleep(2000L);
+		myautomation.findElement(By.className("select_CTXT")).getText();
+		myautomation.close();
+	}
+
+}
