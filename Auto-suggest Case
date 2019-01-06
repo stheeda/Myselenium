@@ -1,0 +1,30 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class Autosuggestive {
+
+	public static void main(String[] args) throws InterruptedException {
+		System.setProperty("webdriver.gecko.driver","C:\\JAVA Training\\Selenium Training\\geckodriver-v0.23.0-win64\\geckodriver.exe");
+		WebDriver myautomation = new FirefoxDriver();
+		myautomation.get("https://www.makemytrip.com/");
+		WebElement Source = myautomation.findElement(By.id("hp-widget__sfrom"));
+		Source.clear();
+		Source.sendKeys("Hyd");
+		Thread.sleep(1000L);
+		Source.sendKeys(Keys.ENTER);
+		
+		WebElement Destination = myautomation.findElement(By.id("hp-widget__sTo"));
+		Destination.sendKeys("Ban");
+		Thread.sleep(1000L);
+		
+		for(int i=1;i<5;i++) 
+		{
+			Destination.sendKeys(Keys.DOWN);
+		}
+		Destination.click();
+	}
+
+}
